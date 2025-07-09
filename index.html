@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Music Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <label>
+        <input type="checkbox" id="themeSwitcher" />
+        🌙 Dark Mode
+      </label>
+    </div>
+
+    <div class="container">
+      <h1 id="greeting">🎵 Mood Music Player 🎵</h1>
+      <p>Select your current mood to play matching music and vibe!</p>
+
+      <div class="buttons">
+        <button onclick="setMood('happy')">😊 Happy</button>
+        <button onclick="setMood('sad')">😢 Sad</button>
+        <button onclick="setMood('calm')">😌 Calm</button>
+        <button onclick="setMood('energetic')">⚡ Energetic</button>
+      </div>
+
+      <div id="quoteBox" class="quote"></div>
+      <div id="emoji" class="emoji">🎉</div>
+
+      <div class="visualizer">
+        <div class="bar" style="--i: 1"></div>
+        <div class="bar" style="--i: 2"></div>
+        <div class="bar" style="--i: 3"></div>
+        <div class="bar" style="--i: 4"></div>
+        <div class="bar" style="--i: 5"></div>
+      </div>
+
+      <audio id="audio" controls autoplay loop></audio>
+
+      <div class="custom-mood">
+        <h3>Add Your Own Mood</h3>
+        <input type="text" id="customMood" placeholder="Mood name" />
+        <input type="text" id="customMusic" placeholder="Music URL (mp3)" />
+        <button onclick="addCustomMood()">Add Mood</button>
+      </div>
+
+      <div class="history">
+        <h3>🕒 Your Mood History:</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
